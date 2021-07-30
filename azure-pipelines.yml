@@ -8,6 +8,8 @@ trigger:
   branches:
     include:
       - master
+    exclude:
+    - releases/old*
   paths:
     exclude:
       - azure-pipelines.yml

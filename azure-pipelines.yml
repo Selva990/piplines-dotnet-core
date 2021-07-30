@@ -6,8 +6,19 @@
 trigger:
 - master
 
+strategy
+  matrix:
+    linux:
+      imageName: "ubuntu-latest"
+    mac:
+      imageName: "mackos-10.04"
+    windows:
+      imageName: "vs2017-win2016"
+  maxParallel: 3
+    
+
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: $(imageName)
 
 variables:
   buildConfiguration: 'Release'

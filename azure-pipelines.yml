@@ -4,17 +4,20 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
-- master
+  batch: true
+  branches:
+    include:
+      - master
 
 strategy:
   matrix:
-    linux:
-      imageName: "ubuntu-latest"
-    mac:
-      imageName: "mackos-10.04"
+    # linux:
+    #   imageName: "ubuntu-latest"
+    # mac:
+    #   imageName: "mackos-10.04"
     windows:
       imageName: "vs2017-win2016"
-  maxParallel: 3
+  maxParallel: 1
     
 
 pool:

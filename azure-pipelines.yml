@@ -10,7 +10,7 @@ trigger:
       - master
   paths:
     exclude:
-      - test.txt
+      - azure-pipelines.yml
 
 strategy:
   matrix:
